@@ -1,8 +1,8 @@
 <template>
   <div class="formulario">
       <div class="formulario-title">{{title}}</div>
-      <input type="text" class="formulario-input">
-      <button>{{button}}</button>
+      <input type="text" class="formulario-input" v-model="inputValue">
+      <button :disable='inputValue.length === 0'>{{button}}</button>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
     props: {
         title: String,
         button: String
+    },
+    data() {
+        return {
+            inputValue: ''
+        }
     }
 }
 </script>
