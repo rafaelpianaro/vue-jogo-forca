@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      <Jogo />
+      <Jogo :erros="erros" />
     </section>
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
       tela: 'inicio',
       etapa: 'palavra',
       palavra: '',
-      dica: ''
+      dica: '',
+      erros: 2
     }
   },
   components: {

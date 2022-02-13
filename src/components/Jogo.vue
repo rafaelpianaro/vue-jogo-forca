@@ -1,6 +1,6 @@
 <template>
   <div class="jogo">
-      <Forca />
+      <Forca :erros="erros" />
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import Forca from './Forca.vue'
 export default {
     name: 'Jogo',
     props: {
-
+        erros: Number
     },
     data() {
 
