@@ -2,7 +2,8 @@
   <div id="app">
     <h1>Jogo da Forca</h1>
     <section v-if="tela === 'inicio'" id="inicio">
-      <Formulario />
+      <Formulario title='Defina a Palavra' button='Próximo'/>
+      <Formulario title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
       Jogo
@@ -30,7 +31,8 @@ export default {
 <style>
 #app {
   width: 100%;
-  height: 400px;
+  height: 100%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

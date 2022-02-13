@@ -1,14 +1,18 @@
 <template>
   <div class="formulario">
-      <div class="formulario-title">Defina a palavra</div>
+      <div class="formulario-title">{{title}}</div>
       <input type="text" class="formulario-input">
-      <button>Próximo</button>
+      <button>{{button}}</button>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'Formulario'
+    name: 'Formulario',
+    props: {
+        title: String,
+        button: String
+    }
 }
 </script>
 
