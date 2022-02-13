@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Jogo da Forca</h1>
     <section v-if="tela === 'inicio'" id="inicio">
-      Início
+      <Formulario />
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
       Jogo
@@ -12,6 +12,7 @@
 
 <script>
 import './css/global.css'
+import Formulario from './components/Formulario.vue'
 
 export default {
   name: 'App',
@@ -21,7 +22,7 @@ export default {
     }
   },
   components: {
-    
+    Formulario
   }
 }
 </script>
