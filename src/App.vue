@@ -2,8 +2,8 @@
   <div id="app">
     <h1>Jogo da Forca</h1>
     <section v-if="tela === 'inicio'" id="inicio">
-      <Formulario v-if="etapa === 'palavra'" title='Defina a Palavra' button='Próximo'/>
-      <Formulario v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
+      <Formulario :action="setPalavra" v-if="etapa === 'palavra'" title='Defina a Palavra' button='Próximo'/>
+      <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
       Jogo
@@ -20,11 +20,26 @@ export default {
   data() {
     return {
       tela: 'inicio',
-      etapa: 'palavra'
+      etapa: 'palavra',
+      palavra: '',
+      dica: ''
     }
   },
   components: {
     Formulario
+  },
+  methods: {
+    setPalavra(palavra) {
+      // alert(palavra)
+      this.palavra = palavra
+      this.etapa = 'dica'
+    },
+    setDica(dica) {
+      // alert(palavra)
+      this.dica = dica
+      this.tela = 'jogo'
+      this.etapa = 'jogo'
+    }
   }
 }
 </script>
