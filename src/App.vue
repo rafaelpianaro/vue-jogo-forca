@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <h1>Jogo da Forca</h1>
-    <section id="inicio">
+    <section v-if="tela === 'inicio'" id="inicio">
       Início
     </section>
-    <section id="jogo">
+    <section v-if="tela === 'jogo'" id="jogo">
       Jogo
     </section>
   </div>
@@ -15,6 +15,11 @@ import './css/global.css'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      tela: 'inicio'
+    }
+  },
   components: {
     
   }
