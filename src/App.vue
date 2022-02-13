@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      Jogo
+      <Jogo />
     </section>
   </div>
 </template>
@@ -14,6 +14,7 @@
 <script>
 import './css/global.css'
 import Formulario from './components/Formulario.vue'
+import Jogo from './components/Jogo.vue'
 
 export default {
   name: 'App',
@@ -26,7 +27,8 @@ export default {
     }
   },
   components: {
-    Formulario
+    Formulario,
+    Jogo
   },
   methods: {
     setPalavra(palavra) {
