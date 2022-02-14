@@ -2,7 +2,7 @@
   <div class="jogo">
       <Forca :erros="erros" />
       <Palavra :etapa="etapa" :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
-      <Teclado :letras="letras" :verificarLetra="verificarLetra" />
+      <Teclado :jogar="jogar" :letras="letras" :verificarLetra="verificarLetra" />
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
         dica: String,
         etapa: String,
         letras: Array,
-        verificarLetra: Function
+        jogar: Function,
+        verificarLetra: Function,
     },
     data() {
 

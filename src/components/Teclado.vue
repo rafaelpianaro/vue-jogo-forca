@@ -2,7 +2,9 @@
   <div class="teclado">
       <button class="teclado-botao" v-for="(letra, key) in 'abcdefghijklmnopqrstuvwxyz'" :key="key"
       :disable="verificarLetra(letra)"
-      >{{letra}}
+      @click="jogar(letra)"
+      >
+        {{letra}}
       </button>
   </div>
 </template>
@@ -12,7 +14,8 @@ export default {
     name: 'Teclado',
     props: {
         letras: Array,
-        verificarLetra: Function
+        jogar: Function,
+        verificarLetra: Function,
     }
 }
 </script>

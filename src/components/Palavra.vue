@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="palavra-dica">
-
+      {{dica}}
     </div>
   </div>
 </template>

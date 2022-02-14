@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      <Jogo :letras="letras" :etapa="etapa" :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
+      <Jogo :jogar="jogar" :letras="letras" :etapa="etapa" :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
     </section>
   </div>
 </template>
@@ -46,6 +46,10 @@ export default {
     },
     verificarLetra(letra) {
       return this.letras.find(item => item.toLowerCase() === letra.toLowerCase())
+    },
+    jogar(letra) {
+      // adiciona letra jogada
+      this.letras.push(letra)
     }
   }
 }
