@@ -1,19 +1,23 @@
 <template>
   <div class="jogo">
       <Forca :erros="erros" />
-      <Palavra :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
+      <Palavra :etapa="etapa" :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
+      <Teclado :letras="letras" :verificarLetra="verificarLetra" />
   </div>
 </template>
 
 <script>
 import Forca from './Forca.vue'
 import Palavra from './Palavra.vue'
+import Teclado from './Teclado.vue'
 export default {
     name: 'Jogo',
     props: {
         erros: Number,
         palavra: String,
         dica: String,
+        etapa: String,
+        letras: Array,
         verificarLetra: Function
     },
     data() {
@@ -24,7 +28,8 @@ export default {
     },
     components: {
         Forca,
-        Palavra
+        Palavra,
+        Teclado
     }
 }
 </script>

@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      <Jogo :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
+      <Jogo :letras="letras" :etapa="etapa" :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
     </section>
   </div>
 </template>
@@ -24,7 +24,8 @@ export default {
       etapa: 'palavra',
       palavra: '',
       dica: '',
-      erros: 2
+      erros: 0,
+      letras: []
     }
   },
   components: {
@@ -44,7 +45,7 @@ export default {
       this.etapa = 'jogo'
     },
     verificarLetra(letra) {
-      return letra == 'a'
+      return this.letras.find(item => item.toLowerCase() === letra.toLowerCase())
     }
   }
 }
