@@ -67,7 +67,7 @@ export default {
       }
     },
     verificarAcertos() {
-      let letrasUnicas = [... Set(this.palavra.split(''))]
+      let letrasUnicas = [...new Set(this.palavra.split(''))]
       if(letrasUnicas.length === (this.letras.length - this.erros)) {
         this.etapa = 'ganhador'
       }

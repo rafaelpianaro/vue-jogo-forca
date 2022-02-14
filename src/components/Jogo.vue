@@ -2,7 +2,7 @@
   <div class="jogo">
       <Forca :erros="erros" />
       <Palavra :etapa="etapa" :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
-      <Teclado :jogar="jogar" :letras="letras" :verificarLetra="verificarLetra" />
+      <Teclado v-if="etapa === 'jogo'" :jogar="jogar" :letras="letras" :verificarLetra="verificarLetra" />
   </div>
 </template>
 
