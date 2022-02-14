@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      <Jogo :erros="erros" />
+      <Jogo :erros="erros" :palavra="palavra" :dica="dica" />
     </section>
   </div>
 </template>

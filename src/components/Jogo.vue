@@ -1,15 +1,19 @@
 <template>
   <div class="jogo">
       <Forca :erros="erros" />
+      <Palavra :palavra="palavra" :dica="dica"/>
   </div>
 </template>
 
 <script>
 import Forca from './Forca.vue'
+import Palavra from './Palavra.vue'
 export default {
     name: 'Jogo',
     props: {
-        erros: Number
+        erros: Number,
+        palavra: String,
+        dica: String,
     },
     data() {
 
@@ -18,7 +22,8 @@ export default {
 
     },
     components: {
-        Forca
+        Forca,
+        Palavra
     }
 }
 </script>
