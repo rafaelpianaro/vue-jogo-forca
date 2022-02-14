@@ -1,7 +1,7 @@
 <template>
   <div class="jogo">
       <Forca :erros="erros" />
-      <Palavra :palavra="palavra" :dica="dica"/>
+      <Palavra :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
         erros: Number,
         palavra: String,
         dica: String,
+        verificarLetra: Function
     },
     data() {
 

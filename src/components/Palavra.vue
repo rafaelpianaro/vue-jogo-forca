@@ -2,7 +2,7 @@
   <div class="palavra">
     <div class="palavra-letras">
       <div class="palavra-letra" v-for="(letra,key) in palavra" :key="key">
-        {{letra}}
+        {{ verificarLetra(letra) ? letra : '' }}
       </div>
     </div>
     <div class="palavra-dica">
@@ -17,6 +17,7 @@ export default {
     props: {
       palavra: String,
       dica: String,
+      verificarLetra: Function
     },
     data() {
 
