@@ -50,6 +50,27 @@ export default {
     jogar(letra) {
       // adiciona letra jogada
       this.letras.push(letra)
+      // validar o erro
+      this.verificarErros(letra)
+
+    },
+    verificarErros(letra) {
+      // acerto
+      if (this.palavra.toLowerCase().indexOf(letra.toLowerCase()) >= 0) {
+        return this.verificarAcertos()
+      }
+      // erros
+      this.erros++
+      // enforcado
+      if(this.erros === 6) {
+        this.etapa = 'enforcado'
+      }
+    },
+    verificarAcertos() {
+      let letrasUnicas = [... Set(this.palavra.split(''))]
+      if(letrasUnicas.length === (this.letras.length - this.erros)) {
+        this.etapa = 'ganhador'
+      }
     }
   }
 }
