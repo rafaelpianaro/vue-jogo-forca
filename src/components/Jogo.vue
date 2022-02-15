@@ -3,6 +3,7 @@
       <Forca :erros="erros" />
       <Palavra :etapa="etapa" :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
       <Teclado v-if="etapa === 'jogo'" :jogar="jogar" :letras="letras" :verificarLetra="verificarLetra" />
+      <Final v-if="etapa != 'jogo'" :msgFinal="etapa === 'ganhador' ? 'Parabéns!' : 'Perdeu, quem sabe na próxima.'" :etapa="etapa" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Forca from './Forca.vue'
 import Palavra from './Palavra.vue'
 import Teclado from './Teclado.vue'
+import Final from './Final.vue'
 export default {
     name: 'Jogo',
     props: {
@@ -30,7 +32,8 @@ export default {
     components: {
         Forca,
         Palavra,
-        Teclado
+        Teclado,
+        Final
     }
 }
 </script>
