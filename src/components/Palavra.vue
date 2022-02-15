@@ -20,12 +20,6 @@ export default {
       etapa: String,
       verificarLetra: Function
     },
-    data() {
-
-    },
-    methods: {
-      
-    }
 }
 </script>
 

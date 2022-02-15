@@ -16,17 +16,12 @@ export default {
     props: {
       erros: Number
     },
-    data() {
-
-    },
-    methods: {
-      
-    }
 }
 </script>
 
 <style>
   .forca img {
-    height: 100%;
+    /* height: 100%; */
+    height: 180px;
   }
 </style>

@@ -3,7 +3,7 @@
       <Forca :erros="erros" />
       <Palavra :etapa="etapa" :verificarLetra="verificarLetra" :palavra="palavra" :dica="dica"/>
       <Teclado v-if="etapa === 'jogo'" :jogar="jogar" :letras="letras" :verificarLetra="verificarLetra" />
-      <Final v-if="etapa != 'jogo'" :msgFinal="etapa === 'ganhador' ? 'Parabéns!' : 'Perdeu, quem sabe na próxima.'" :etapa="etapa" />
+      <Final v-if="etapa != 'jogo'" :jogarNovamente="jogarNovamente" :msgFinal="etapa === 'ganhador' ? 'Parabéns!' : 'Perdeu, quem sabe na próxima.'" :etapa="etapa" />
   </div>
 </template>
 
@@ -22,12 +22,7 @@ export default {
         letras: Array,
         jogar: Function,
         verificarLetra: Function,
-    },
-    data() {
-
-    },
-    methods: {
-
+        jogarNovamente: Function,
     },
     components: {
         Forca,

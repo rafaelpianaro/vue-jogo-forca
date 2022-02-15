@@ -14,7 +14,7 @@ export default {
         button: String,
         action: Function
     },
-    data() {
+    data: function() {
         return {
             inputValue: ''
         }
