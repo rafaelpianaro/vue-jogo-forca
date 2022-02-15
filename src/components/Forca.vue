@@ -5,8 +5,8 @@
       <!-- <img v-bind:src="'../assets/' + erros + '.svg'" /> -->
       <!-- <img :src="'../assets/' + erros + '.svg'" /> -->
       <!-- <img :src="getImgUrl(pic)" v-bind:alt="pic"> -->
-      <!-- <img :src="require(`@/assets/${erros}.svg`)" alt class="icon" /> -->
-      <img :src="`https://raw.githubusercontent.com/william-costa/wdev-hangman-game-resources/master/images/hangman/${erros}.svg`" alt="">
+      <img :src="require(`@/assets/${erros}.svg`)" alt class="icon" />
+      <!-- <img :src="`https://raw.githubusercontent.com/william-costa/wdev-hangman-game-resources/master/images/hangman/${erros}.svg`" alt=""> -->
   </div>
 </template>
 
