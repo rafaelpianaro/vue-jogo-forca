@@ -6,7 +6,7 @@
       <Formulario :action="setDica" v-if="etapa === 'dica'" title='Defina a Dica' button='Iniciar o Jogo 😃'/>
     </section>
     <section v-if="tela === 'jogo'" id="jogo">
-      <Jogo :jogar="jogar" :letras="letras" :etapa="etapa" :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
+      <Jogo :jogarNovamente="jogarNovamente" :jogar="jogar" :letras="letras" :etapa="etapa" :verificarLetra="verificarLetra" :erros="erros" :palavra="palavra" :dica="dica" />
     </section>
   </div>
 </template>
@@ -18,7 +18,7 @@ import Jogo from './components/Jogo.vue'
 
 export default {
   name: 'App',
-  data() {
+  data: function() {
     return {
       tela: 'inicio',
       etapa: 'palavra',
@@ -71,6 +71,14 @@ export default {
       if(letrasUnicas.length === (this.letras.length - this.erros)) {
         this.etapa = 'ganhador'
       }
+    },
+    jogarNovamente() {
+      this.palavra = ''
+      this.dica = ''
+      this.erros = 0
+      this.letras = []
+      this.tela = 'inicio'
+      this.etapa = 'palavra'
     }
   }
 }
@@ -80,7 +88,7 @@ export default {
 #app {
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
